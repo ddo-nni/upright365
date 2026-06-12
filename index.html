@@ -1,74 +1,220 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>오늘의 청렴 한마디</title>
 
 <style>
-body{
+
+*{
     margin:0;
-    font-family:Pretendard,sans-serif;
-    background:#f5f7fa;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Pretendard", "Noto Sans KR", sans-serif;
+    background: linear-gradient(135deg,#0f4c81,#1f7ed0);
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
 }
 
 .card{
-    width:90%;
-    max-width:400px;
-    background:white;
-    border-radius:20px;
-    padding:30px;
-    box-shadow:0 8px 30px rgba(0,0,0,.1);
-    text-align:center;
+    background:#fff;
+    border-radius:24px;
+    padding:32px 28px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.badge{
+    display:inline-block;
+    background:#eaf4ff;
+    color:#0f4c81;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.title{
+    font-size:28px;
+    font-weight:800;
+    color:#222;
+    margin-bottom:10px;
 }
 
 .date{
     color:#666;
-    margin-bottom:20px;
+    margin-bottom:30px;
+    font-size:15px;
 }
 
 .quote{
-    font-size:22px;
+    font-size:24px;
     font-weight:700;
-    line-height:1.6;
+    line-height:1.7;
+    color:#222;
+    margin-bottom:30px;
 }
+
+.law-box{
+    background:#f8fafc;
+    border-radius:16px;
+    padding:18px;
+}
+
+.law-title{
+    font-size:14px;
+    color:#0f4c81;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.law-name{
+    font-size:16px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:15px;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    text-decoration:none;
+    background:#0f4c81;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+.footer{
+    text-align:center;
+    color:white;
+    margin-top:20px;
+    font-size:12px;
+    opacity:.8;
+}
+
 </style>
+
 </head>
 
 <body>
 
+<div class="container">
+
 <div class="card">
-    <div class="date" id="date"></div>
-    <div class="quote" id="quote"></div>
+
+<div class="badge">TODAY CLEAN</div>
+
+<div class="title">오늘의 청렴 한마디</div>
+
+<div class="date" id="date"></div>
+
+<div class="quote" id="quote"></div>
+
+<div class="law-box">
+
+<div class="law-title">📖 관련 법령</div>
+
+<div class="law-name" id="law"></div>
+
+<a id="lawLink" class="btn" target="_blank">
+관련 법령 보기
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+인천공항시설관리 청렴문화 확산 캠페인
+</div>
+
 </div>
 
 <script>
 
-const quotes = [
-"사소한 편의 제공도 이해충돌의 시작이 될 수 있습니다.",
-"업무상 알게 된 정보를 개인적 이익에 활용할 수 없습니다.",
-"청렴은 누군가 보고 있을 때가 아니라 보지 않을 때 지켜집니다.",
-"공정한 업무수행이 조직의 신뢰를 만듭니다.",
-"규정 준수는 청렴의 기본입니다."
+const contents = [
+
+{
+text:"사소한 편의 제공도 이해충돌의 시작이 될 수 있습니다.",
+law:"이해충돌방지법 제5조",
+link:"https://www.law.go.kr"
+},
+
+{
+text:"업무상 알게 된 정보를 개인적 이익에 활용할 수 없습니다.",
+law:"임직원 행동강령",
+link:"https://www.law.go.kr"
+},
+
+{
+text:"청렴은 누군가 보고 있을 때가 아니라 보지 않을 때 지켜집니다.",
+law:"청탁금지법",
+link:"https://www.law.go.kr"
+},
+
+{
+text:"공정한 업무수행이 조직의 신뢰를 만듭니다.",
+law:"공공기관 행동강령",
+link:"https://www.law.go.kr"
+},
+
+{
+text:"이해관계자와의 관계에서는 항상 투명성을 유지해야 합니다.",
+law:"이해충돌방지법",
+link:"https://www.law.go.kr"
+},
+
+{
+text:"작은 원칙을 지키는 것이 큰 신뢰를 만듭니다.",
+law:"청탁금지법",
+link:"https://www.law.go.kr"
+}
+
 ];
 
 const today = new Date();
 
-document.getElementById('date').innerText =
-today.toLocaleDateString('ko-KR');
+document.getElementById("date").innerText =
+today.toLocaleDateString("ko-KR",{
+year:"numeric",
+month:"long",
+day:"numeric",
+weekday:"long"
+});
 
 const dayOfYear =
 Math.floor(
 (today - new Date(today.getFullYear(),0,0))
-/ 86400000
+/86400000
 );
 
-document.getElementById('quote').innerText =
-quotes[dayOfYear % quotes.length];
+const item = contents[dayOfYear % contents.length];
+
+document.getElementById("quote").innerText = item.text;
+document.getElementById("law").innerText = item.law;
+document.getElementById("lawLink").href = item.link;
 
 </script>
 
