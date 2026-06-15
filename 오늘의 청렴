@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPRIGHT 365</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+background:linear-gradient(180deg,#effcff 0%,#dff8ff 15%,#ccefff 35%,#f7fcff 65%,#ffffff 100%);
+background-attachment:fixed;
+color:#111827;
+word-break:keep-all;
+}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:70px 24px}
+.container{width:100%;max-width:1100px}
+.hero{text-align:center}
+.date{font-size:52px;font-weight:800;color:#94A3B8;margin-bottom:18px}
+.hero-label{font-size:52px;font-weight:800;color:#94A3B8;margin-bottom:30px}
+.quote{font-size:clamp(36px,6vw,72px);font-weight:800;line-height:1.5;max-width:900px;margin:auto}
+.tag{margin-top:24px;color:#14B4C1;font-weight:700;font-size:20px}
+.card{background:rgba(255,255,255,.78);backdrop-filter:blur(16px);border-radius:32px;padding:48px;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.section-title{font-size:52px;font-weight:800;color:#94A3B8;margin-bottom:30px;text-align:center}
+.score-row{display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap}
+.score{font-size:96px;font-weight:800}
+.weather{font-size:56px}
+.status{font-size:42px;font-weight:700}
+.tip{margin-top:28px;text-align:center;font-size:22px;color:#64748B;line-height:1.8}
+.law{text-align:center}
+.law h3{font-size:34px;margin-bottom:16px}
+.law-btn{display:inline-block;margin-top:24px;padding:16px 30px;background:linear-gradient(135deg,#14B4C1,#5A86C7);color:#fff;text-decoration:none;border-radius:14px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value{background:white;padding:32px;border-radius:24px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.icon{font-size:52px;margin-bottom:12px}
+.value h3{font-size:28px;margin-bottom:12px}
+.value p{line-height:1.8;color:#475569}
+footer{background:linear-gradient(135deg,#14B4C1,#5A86C7);color:white;padding:100px 24px}
+.footer-wrap{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer-left h2{font-size:42px;margin-bottom:10px}
+@media(max-width:900px){
+.values{grid-template-columns:1fr}
+.footer-wrap{flex-direction:column;text-align:center}
+.section-title,.hero-label{font-size:28px}
+.date{font-size:26px}
+.status{font-size:32px}
+.score{font-size:72px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="container">
+<div class="date" id="date"></div>
+<div class="hero-label">오늘의 청렴 한마디</div>
+<div class="quote" id="quote"></div>
+<div class="tag" id="tag"></div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="card">
+<div class="section-title">오늘의 청렴지수</div>
+<div class="score-row">
+<div class="score" id="score">92점</div>
+<div class="weather" id="weather">☀️</div>
+<div class="status" id="status">맑음</div>
+</div>
+<div class="tip" id="tip"></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="card law">
+<div class="section-title">관련 법령</div>
+<h3 id="law"></h3>
+<p>오늘의 청렴 메시지와 연계된 주요 법령입니다.</p>
+<a id="lawLink" class="law-btn" target="_blank">법령 전문 보기</a>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">청렴이 만드는 가치</div>
+<div class="values">
+<div class="value">
+<div class="icon">✈️</div>
+<h3>안전</h3>
+<p>신뢰받는 공항 운영은 청렴한 업무수행으로부터 시작됩니다.</p>
+</div>
+<div class="value">
+<div class="icon">🛡️</div>
+<h3>투명</h3>
+<p>모든 의사결정은 공정하고 투명하게 이루어져야 합니다.</p>
+</div>
+<div class="value">
+<div class="icon">🤝</div>
+<h3>상생</h3>
+<p>이해관계자와의 신뢰는 청렴한 조직문화에서 만들어집니다.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-wrap">
+<div class="footer-left">
+<h2>UPRIGHT 365</h2>
+<p>매일의 청렴이 신뢰를 만듭니다.</p>
+</div>
+<div>인천공항시설관리</div>
+</div>
+</footer>
+
+<script>
+const items = [
+
+{quote:"사소한 편의 제공도 이해충돌의 시작이 될 수 있습니다.",tag:"#이해충돌",law:"이해충돌방지법 제5조",score:92,status:"맑음",emoji:"🌤️",tip:"오늘은 이해충돌 여부를 한 번 더 점검해보는 건 어떨까요?"},
+
+{quote:"업무상 알게 된 정보를 개인적 이익에 활용할 수 없습니다.",tag:"#정보보호",law:"임직원 행동강령",score:84,status:"보통",emoji:"⛅",tip:"오늘은 업무정보의 적정한 관리 상태를 확인해보세요."},
+
+{quote:"청렴은 누군가 보고 있을 때가 아니라 보지 않을 때 지켜집니다.",tag:"#청렴",law:"청탁금지법",score:97,status:"매우 맑음",emoji:"☀️",tip:"오늘은 작은 원칙 하나를 더 지켜보는 건 어떨까요?"},
+
+{quote:"공정한 업무수행은 조직의 신뢰를 높입니다.",tag:"#공정",law:"임직원 행동강령",score:88,status:"보통",emoji:"⛅",tip:"오늘은 의사결정 과정의 공정성을 점검해보세요."},
+
+{quote:"직무관련자와의 사적 관계는 투명하게 관리해야 합니다.",tag:"#이해충돌",law:"이해충돌방지법",score:91,status:"맑음",emoji:"🌤️",tip:"사적 이해관계 신고 여부를 확인해보세요."},
+
+{quote:"청렴은 규정 준수에서 시작됩니다.",tag:"#준법",law:"청탁금지법",score:95,status:"매우 맑음",emoji:"☀️",tip:"오늘은 관련 규정을 한 번 더 읽어보세요."},
+
+{quote:"작은 부주의가 큰 부패로 이어질 수 있습니다.",tag:"#경각심",law:"임직원 행동강령",score:81,status:"보통",emoji:"⛅",tip:"업무 처리 절차를 다시 점검해보세요."},
+
+{quote:"투명한 정보공개가 신뢰를 만듭니다.",tag:"#정보공개",law:"공공기관 운영법",score:89,status:"보통",emoji:"⛅",tip:"정보공개 절차를 확인해보세요."},
+
+{quote:"모든 이해관계자를 공정하게 대해야 합니다.",tag:"#공정",law:"행동강령",score:93,status:"맑음",emoji:"🌤️",tip:"업무 상대방을 공정하게 대했는지 돌아보세요."},
+
+{quote:"직무상 권한은 국민을 위해 사용되어야 합니다.",tag:"#책임",law:"행동강령",score:96,status:"매우 맑음",emoji:"☀️",tip:"권한 남용 요소가 없는지 점검해보세요."},
+
+{quote:"신뢰는 하루아침에 만들어지지 않습니다.",tag:"#신뢰",law:"행동강령",score:87,status:"보통",emoji:"⛅",tip:"오늘의 행동이 신뢰를 만드는지 생각해보세요."},
+
+{quote:"공공의 이익은 개인의 이익보다 우선합니다.",tag:"#공공성",law:"이해충돌방지법",score:94,status:"맑음",emoji:"🌤️",tip:"공공성을 기준으로 판단해보세요."},
+
+{quote:"청렴은 조직문화의 기본입니다.",tag:"#조직문화",law:"행동강령",score:90,status:"맑음",emoji:"🌤️",tip:"동료와 함께 청렴을 실천해보세요."},
+
+{quote:"직무관련 금품 수수는 어떠한 경우에도 금지됩니다.",tag:"#금품수수",law:"청탁금지법",score:98,status:"매우 맑음",emoji:"☀️",tip:"금품·향응 수수 여부를 점검해보세요."},
+
+{quote:"청렴한 조직은 안전한 조직입니다.",tag:"#안전",law:"행동강령",score:85,status:"보통",emoji:"⛅",tip:"안전과 청렴의 연결고리를 생각해보세요."},
+
+{quote:"이해충돌은 예방이 가장 중요합니다.",tag:"#예방",law:"이해충돌방지법",score:92,status:"맑음",emoji:"🌤️",tip:"이해충돌 가능성을 미리 확인해보세요."},
+
+{quote:"모든 보고는 사실에 근거해야 합니다.",tag:"#정직",law:"행동강령",score:95,status:"매우 맑음",emoji:"☀️",tip:"보고 내용의 정확성을 확인해보세요."},
+
+{quote:"투명한 계약은 청렴의 시작입니다.",tag:"#계약",law:"국가계약법",score:86,status:"보통",emoji:"⛅",tip:"계약 절차 준수 여부를 점검해보세요."},
+
+{quote:"갑질 없는 조직이 건강한 조직입니다.",tag:"#상호존중",law:"직장 내 괴롭힘 금지",score:88,status:"보통",emoji:"⛅",tip:"존중하는 언어를 사용해보세요."},
+
+{quote:"청렴은 선택이 아닌 의무입니다.",tag:"#청렴",law:"청탁금지법",score:97,status:"매우 맑음",emoji:"☀️",tip:"오늘의 청렴 실천 항목을 확인해보세요."},
+
+{quote:"사적인 부탁은 공정성을 훼손할 수 있습니다.",tag:"#청탁",law:"청탁금지법",score:83,status:"보통",emoji:"⛅",tip:"부정청탁 요소가 없는지 점검해보세요."},
+
+{quote:"업무상 정보는 보호되어야 할 자산입니다.",tag:"#정보보안",law:"개인정보보호법",score:91,status:"맑음",emoji:"🌤️",tip:"정보보안 수칙을 확인해보세요."},
+
+{quote:"윤리적 판단이 조직의 미래를 결정합니다.",tag:"#윤리",law:"행동강령",score:94,status:"맑음",emoji:"🌤️",tip:"오늘의 판단이 윤리적인지 생각해보세요."},
+
+{quote:"청렴은 행동으로 증명됩니다.",tag:"#실천",law:"행동강령",score:96,status:"매우 맑음",emoji:"☀️",tip:"하나의 청렴 실천을 행동으로 옮겨보세요."},
+
+{quote:"공정한 채용은 신뢰의 출발점입니다.",tag:"#공정채용",law:"채용절차법",score:89,status:"보통",emoji:"⛅",tip:"채용 과정의 공정성을 확인해보세요."},
+
+{quote:"직무수행 과정의 투명성이 중요합니다.",tag:"#투명성",law:"행동강령",score:90,status:"맑음",emoji:"🌤️",tip:"업무 과정을 기록해보세요."},
+
+{quote:"규정 준수는 가장 기본적인 청렴입니다.",tag:"#준수",law:"사규",score:93,status:"맑음",emoji:"🌤️",tip:"관련 규정을 다시 확인해보세요."},
+
+{quote:"책임 있는 행동이 조직의 가치를 높입니다.",tag:"#책임",law:"행동강령",score:95,status:"매우 맑음",emoji:"☀️",tip:"맡은 업무의 책임 범위를 점검해보세요."},
+
+{quote:"청렴은 모두가 함께 만들어가는 문화입니다.",tag:"#문화",law:"행동강령",score:87,status:"보통",emoji:"⛅",tip:"동료와 청렴 실천을 공유해보세요."},
+
+{quote:"오늘의 작은 실천이 내일의 신뢰를 만듭니다.",tag:"#UPRIGHT365",law:"행동강령",score:99,status:"매우 맑음",emoji:"☀️",tip:"오늘 한 가지 청렴 실천을 기록해보세요."}
+
+];
+
+const today=new Date();
+document.getElementById('date').innerText=today.toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'long'});
+const day=Math.floor((today-new Date(today.getFullYear(),0,0))/86400000);
+const item=items[day%items.length];
+document.getElementById('quote').innerText =
+'“' + item.quote + '”';
+
+document.getElementById('tag').innerText =
+item.tag;
+
+document.getElementById('law').innerText =
+item.law;
+
+document.getElementById('tip').innerText =
+item.tip;
+
+const score=70+(day%31);
+let weather='☁️',status='흐림';
+if(score>=95){weather='☀️';status='매우 맑음';}
+else if(score>=90){weather='🌤️';status='맑음';}
+else if(score>=80){weather='⛅';status='보통';}
+document.getElementById('score').innerText=score+'점';
+document.getElementById('weather').innerText=weather;
+document.getElementById('status').innerText=status;
+</script>
+</body>
+</html>
