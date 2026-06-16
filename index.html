@@ -46,6 +46,54 @@ section{padding:80px 24px}
 .footer-title{font-size:42px;font-weight:800;margin-bottom:15px}
 .footer-desc{font-size:20px;margin-bottom:15px}
 @media(max-width:900px){.hero-title{font-size:34px}.quote{font-size:42px}.section-title{font-size:34px}.score-circle{width:220px;height:220px}.score{font-size:56px}.value-grid{grid-template-columns:1fr}}
+.check-line{background:#F59E0B}
+
+.checklist-card{
+padding:20px 40px;
+}
+
+.check-row{
+display:flex;
+align-items:center;
+gap:18px;
+padding:24px 0;
+cursor:pointer;
+font-size:24px;
+font-weight:600;
+border-bottom:1px solid #E5E7EB;
+transition:.2s;
+}
+
+.check-row:last-of-type{
+border-bottom:none;
+}
+
+.check-row:hover{
+transform:translateX(6px);
+}
+
+.check-row input{
+width:28px;
+height:28px;
+cursor:pointer;
+accent-color:#F59E0B;
+flex-shrink:0;
+}
+
+.check-row span{
+line-height:1.6;
+}
+
+.check-result{
+margin-top:30px;
+padding:20px;
+border-radius:18px;
+background:#FFF7ED;
+text-align:center;
+font-size:18px;
+font-weight:700;
+color:#C2410C;
+}
 </style>
 
 </head>
@@ -62,31 +110,37 @@ section{padding:80px 24px}
 </section>
 
 <section>
-<div class="container">
-<h2 class="section-title">오늘의 청렴지수</h2>
-<div class="section-line score-line"></div>
-<div class="card score-card">
-<div class="score-circle">
-<div class="weather" id="weather"></div>
-<div class="score" id="score"></div>
-<div class="status" id="status"></div>
-</div>
-<div class="tip" id="tip"></div>
-</div>
-</div>
-</section>
 
-<section>
 <div class="container">
-<h2 class="section-title">관련 법령</h2>
-<div class="section-line law-line"></div>
-<div class="card law-card">
-<div class="law-icon">📖</div>
-<div class="law-title" id="law"></div>
-<div class="law-desc">오늘의 청렴 메시지와 연계된 주요 법령입니다.</div>
-<a id="lawLink" class="law-btn" href="https://www.law.go.kr" target="_blank">법령 전문 보기</a>
+
+<h2 class="section-title">오늘의 청렴 체크리스트</h2>
+<div class="section-line check-line"></div>
+
+<div class="card checklist-card">
+
+<label class="check-row">
+<input type="checkbox">
+<span>지금 하는 행동이 공개되어도 부끄럽지 않은가?</span>
+</label>
+
+<label class="check-row">
+<input type="checkbox">
+<span>타인에게 부당한 요구를 하고 있진 않은가?</span>
+</label>
+
+<label class="check-row">
+<input type="checkbox">
+<span>나의 행동이 조직의 신뢰를 훼손할 가능성은 없는가?</span>
+</label>
+
+<div class="check-result">
+☑️ 3개 모두 체크할 수 있다면 오늘도 청렴한 하루입니다.
 </div>
+
 </div>
+
+</div>
+
 </section>
 
   <section>
