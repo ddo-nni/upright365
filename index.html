@@ -17,86 +17,150 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .hero-title{font-size:52px;font-weight:800;color:#94A3B8;margin-bottom:30px}
 .quote{font-size:clamp(42px,6vw,80px);font-weight:800;line-height:1.5;max-width:900px;margin:auto}
 .tag{margin-top:24px;font-size:22px;font-weight:700;color:#14B4C1}
+
 section{padding:80px 24px}
 .container{max-width:1100px;margin:auto}
+
 .section-title{font-size:52px;font-weight:800;margin-bottom:12px}
 .section-line{width:80px;height:5px;border-radius:999px;margin-bottom:30px}
+
 .score-line{background:#14B8A6}
 .law-line{background:#2563EB}
+.check-line{background:#F59E0B}
 .value-line{background:#8B5CF6}
+
 .card{background:rgba(255,255,255,.82);backdrop-filter:blur(18px);border-radius:36px;padding:48px;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+
 .score-card{text-align:center}
-.score-circle{width:260px;height:260px;border-radius:50%;margin:30px auto;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(135deg,#F8FFFF,#DFFCF8);box-shadow:0 25px 50px rgba(20,184,166,.15)}
+
+.score-circle{
+width:260px;
+height:260px;
+margin:30px auto;
+border-radius:50%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#F8FFFF,#DFFCF8);
+border:8px solid rgba(20,184,166,.12);
+box-shadow:0 25px 50px rgba(20,184,166,.15)
+}
+
 .weather{font-size:58px}
 .score{font-size:78px;font-weight:800}
 .status{font-size:26px;font-weight:700;color:#14B8A6}
-.tip{margin-top:30px;font-size:22px;line-height:1.8;color:#64748B}
+
+.tip{
+margin-top:30px;
+font-size:22px;
+line-height:1.8;
+color:#64748B;
+text-align:center;
+}
+
 .law-card{text-align:center}
 .law-icon{font-size:56px;margin-bottom:15px}
-.law-title{font-size:34px;font-weight:800;margin-bottom:15px}
+.law-title{font-size:36px;font-weight:800;margin-bottom:15px}
 .law-desc{font-size:18px;line-height:1.8;color:#64748B}
-.law-btn{display:inline-block;margin-top:30px;padding:16px 32px;border-radius:16px;text-decoration:none;color:#fff;font-weight:700;background:linear-gradient(135deg,#2563EB,#3B82F6)}
-.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.value-card{background:#fff;padding:36px;border-radius:28px;text-align:center;box-shadow:0 15px 40px rgba(0,0,0,.06);transition:.3s}
-.value-card:hover{transform:translateY(-8px)}
-.value-icon{font-size:54px;margin-bottom:15px}
-.value-title{font-size:28px;font-weight:800;margin-bottom:12px}
-.value-desc{line-height:1.8;color:#64748B}
-.footer{margin-top:80px;padding:120px 24px;text-align:center;color:#fff;background:linear-gradient(135deg,#14B4C1,#5A86C7)}
-.footer-title{font-size:42px;font-weight:800;margin-bottom:15px}
-.footer-desc{font-size:20px;margin-bottom:15px}
-@media(max-width:900px){.hero-title{font-size:34px}.quote{font-size:42px}.section-title{font-size:34px}.score-circle{width:220px;height:220px}.score{font-size:56px}.value-grid{grid-template-columns:1fr}}
-.check-line{background:#F59E0B}
 
-.checklist-card{
-padding:20px 40px;
+.law-btn{
+display:inline-block;
+margin-top:30px;
+padding:16px 32px;
+border-radius:16px;
+text-decoration:none;
+color:#fff;
+font-weight:700;
+background:linear-gradient(135deg,#2563EB,#3B82F6)
 }
+
+  .checklist-card{padding:20px 40px}
 
 .check-row{
 display:flex;
 align-items:center;
 gap:18px;
 padding:24px 0;
-cursor:pointer;
 font-size:24px;
 font-weight:600;
 border-bottom:1px solid #E5E7EB;
-transition:.2s;
+cursor:pointer;
+transition:.2s
 }
 
-.check-row:last-of-type{
-border-bottom:none;
-}
-
-.check-row:hover{
-transform:translateX(6px);
-}
+.check-row:hover{transform:translateX(6px)}
+.check-row:last-of-type{border-bottom:none}
 
 .check-row input{
 width:28px;
 height:28px;
-cursor:pointer;
 accent-color:#F59E0B;
-flex-shrink:0;
+cursor:pointer;
+flex-shrink:0
 }
 
-.check-row span{
-line-height:1.6;
-}
+.check-row span{line-height:1.6}
 
 .check-result{
 margin-top:30px;
 padding:20px;
 border-radius:18px;
 background:#FFF7ED;
-text-align:center;
+color:#C2410C;
 font-size:18px;
 font-weight:700;
-color:#C2410C;
+text-align:center
 }
-</style>
 
+.value-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px
+}
+
+.value-card{
+background:#fff;
+padding:36px;
+border-radius:28px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+transition:.3s
+}
+
+.value-card:hover{transform:translateY(-8px)}
+.value-card:nth-child(1){border-top:6px solid #2563EB}
+.value-card:nth-child(2){border-top:6px solid #14B8A6}
+.value-card:nth-child(3){border-top:6px solid #8B5CF6}
+
+.value-icon{font-size:54px;margin-bottom:15px}
+.value-title{font-size:28px;font-weight:800;margin-bottom:12px}
+.value-desc{line-height:1.8;color:#64748B}
+
+.footer{
+margin-top:80px;
+padding:120px 24px;
+text-align:center;
+color:#fff;
+background:linear-gradient(135deg,#14B4C1,#5A86C7)
+}
+
+.footer-title{font-size:42px;font-weight:800;margin-bottom:15px}
+.footer-desc{font-size:20px;margin-bottom:15px}
+
+@media(max-width:900px){
+.hero-title{font-size:34px}
+.quote{font-size:42px}
+.section-title{font-size:34px}
+.score-circle{width:220px;height:220px}
+.score{font-size:56px}
+.value-grid{grid-template-columns:1fr}
+.check-row{font-size:18px}
+}
+
+</style>
 </head>
+
 <body>
 
 <section class="hero">
@@ -110,7 +174,37 @@ color:#C2410C;
 </section>
 
 <section>
+<div class="container">
+<h2 class="section-title">오늘의 청렴지수</h2>
+<div class="section-line score-line"></div>
 
+<div class="card score-card">
+<div class="score-circle">
+<div class="weather" id="weather"></div>
+<div class="score" id="score"></div>
+<div class="status" id="status"></div>
+</div>
+<div class="tip" id="tip"></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">관련 법령</h2>
+<div class="section-line law-line"></div>
+
+<div class="card law-card">
+<div class="law-icon">📖</div>
+<div class="law-title" id="law"></div>
+<div class="law-desc">오늘의 청렴 메시지와 연계된 주요 법령입니다.</div>
+<a id="lawLink" class="law-btn" href="https://www.law.go.kr" target="_blank">법령 전문 보기</a>
+</div>
+
+</div>
+</section>
+
+  <section>
 <div class="container">
 
 <h2 class="section-title">오늘의 청렴 체크리스트</h2>
@@ -140,10 +234,9 @@ color:#C2410C;
 </div>
 
 </div>
-
 </section>
 
-  <section>
+<section>
 <div class="container">
 
 <h2 class="section-title">청렴이 만드는 가치</h2>
@@ -202,11 +295,35 @@ const items=[
 
 {quote:"모든 이해관계자를 공정하게 대해야 합니다.",tag:"#공정",law:"임직원 행동강령",score:93,emoji:"🌤️",status:"맑음",tip:"업무 상대방을 공정하게 대했는지 돌아보세요."},
 
-{quote:"청렴은 조직문화의 기본입니다.",tag:"#조직문화",law:"임직원 행동강령",score:90,emoji:"🌤️",status:"맑음",tip:"동료와 함께 청렴을 실천해보세요."}
+{quote:"청렴은 조직문화의 기본입니다.",tag:"#조직문화",law:"임직원 행동강령",score:90,emoji:"🌤️",status:"맑음",tip:"동료와 함께 청렴을 실천해보세요."},
+
+  {quote:"직무관련 금품 수수는 어떠한 경우에도 금지됩니다.",tag:"#금품수수",law:"청탁금지법",score:98,emoji:"☀️",status:"매우 맑음",tip:"금품·향응 수수 여부를 점검해보세요."},
+
+{quote:"청렴한 조직은 안전한 조직입니다.",tag:"#안전",law:"임직원 행동강령",score:85,emoji:"⛅",status:"보통",tip:"안전과 청렴의 연결고리를 생각해보세요."},
+
+{quote:"이해충돌은 예방이 가장 중요합니다.",tag:"#예방",law:"이해충돌방지법",score:92,emoji:"🌤️",status:"맑음",tip:"이해충돌 가능성을 미리 확인해보세요."},
+
+{quote:"모든 보고는 사실에 근거해야 합니다.",tag:"#정직",law:"임직원 행동강령",score:95,emoji:"☀️",status:"매우 맑음",tip:"보고 내용의 정확성을 확인해보세요."},
+
+{quote:"투명한 계약은 청렴의 시작입니다.",tag:"#계약",law:"국가계약법",score:86,emoji:"⛅",status:"보통",tip:"계약 절차 준수 여부를 점검해보세요."},
+
+{quote:"갑질 없는 조직이 건강한 조직입니다.",tag:"#상호존중",law:"직장 내 괴롭힘 금지",score:88,emoji:"⛅",status:"보통",tip:"존중하는 언어를 사용해보세요."},
+
+{quote:"청렴은 선택이 아닌 의무입니다.",tag:"#청렴",law:"청탁금지법",score:97,emoji:"☀️",status:"매우 맑음",tip:"오늘의 청렴 실천 항목을 확인해보세요."},
+
+{quote:"사적인 부탁은 공정성을 훼손할 수 있습니다.",tag:"#청탁",law:"청탁금지법",score:83,emoji:"⛅",status:"보통",tip:"부정청탁 요소가 없는지 점검해보세요."},
+
+{quote:"업무상 정보는 보호되어야 할 자산입니다.",tag:"#정보보안",law:"개인정보보호법",score:91,emoji:"🌤️",status:"맑음",tip:"정보보안 수칙을 확인해보세요."},
+
+{quote:"윤리적 판단이 조직의 미래를 결정합니다.",tag:"#윤리",law:"임직원 행동강령",score:94,emoji:"🌤️",status:"맑음",tip:"오늘의 판단이 윤리적인지 생각해보세요."},
+
+{quote:"청렴은 행동으로 증명됩니다.",tag:"#실천",law:"임직원 행동강령",score:96,emoji:"☀️",status:"매우 맑음",tip:"하나의 청렴 실천을 행동으로 옮겨보세요."},
+
+{quote:"오늘의 작은 실천이 내일의 신뢰를 만듭니다.",tag:"#UPRIGHT365",law:"임직원 행동강령",score:99,emoji:"☀️",status:"매우 맑음",tip:"오늘 한 가지 청렴 실천을 기록해보세요."}
 
 ];
 
-  const today=new Date();
+const today=new Date();
 
 document.getElementById("date").innerText=
 today.toLocaleDateString("ko-KR",{
@@ -222,7 +339,7 @@ const item=items[day%items.length];
 document.getElementById("quote").innerText="“"+item.quote+"”";
 document.getElementById("tag").innerText=item.tag;
 document.getElementById("law").innerText=item.law;
-document.getElementById("score").innerText=item.score;
+document.getElementById("score").innerText=item.score+"점";
 document.getElementById("weather").innerText=item.emoji;
 document.getElementById("status").innerText=item.status;
 document.getElementById("tip").innerText=item.tip;
