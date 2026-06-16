@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>UPRIGHT 365</title>
 
 <style>
@@ -20,8 +19,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:
-linear-gradient(
+background:linear-gradient(
 180deg,
 #EAF8FF 0%,
 #D7F2FF 15%,
@@ -38,8 +36,8 @@ word-break:keep-all;
 .hero{
 min-height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 padding:60px 24px;
 }
@@ -50,18 +48,17 @@ max-width:1000px;
 
 .brand{
 font-size:20px;
-letter-spacing:8px;
 font-weight:800;
+letter-spacing:8px;
 color:#14B4C1;
-margin-bottom:40px;
-text-transform:uppercase;
+margin-bottom:20px;
 }
 
 .date{
 font-size:22px;
 font-weight:600;
 color:#94A3B8;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .hero-title{
@@ -85,7 +82,7 @@ color:#14B4C1;
 }
 
 section{
-padding:90px 24px;
+padding:80px 24px;
 }
 
 .container{
@@ -93,18 +90,9 @@ max-width:1100px;
 margin:auto;
 }
 
-.card{
-background:rgba(255,255,255,.82);
-backdrop-filter:blur(18px);
-border-radius:36px;
-padding:48px;
-box-shadow:0 20px 60px rgba(0,0,0,.08);
-}
-
 .section-title{
 font-size:52px;
 font-weight:800;
-color:#0F172A;
 margin-bottom:12px;
 }
 
@@ -115,8 +103,24 @@ border-radius:999px;
 margin-bottom:30px;
 }
 
+.card{
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(18px);
+border-radius:36px;
+padding:48px;
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
 .score-line{
 background:#14B8A6;
+}
+
+.law-line{
+background:#2563EB;
+}
+
+.value-line{
+background:#8B5CF6;
 }
 
 .score-card{
@@ -127,55 +131,39 @@ text-align:center;
 width:260px;
 height:260px;
 border-radius:50%;
-
 margin:30px auto;
-
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-
-background:
-linear-gradient(
+background:linear-gradient(
 135deg,
 #F8FFFF,
 #DFFCF8
 );
-
-box-shadow:
-0 25px 50px rgba(20,184,166,.15);
+box-shadow:0 25px 50px rgba(20,184,166,.15);
 }
 
 .weather{
 font-size:58px;
-margin-bottom:10px;
 }
 
 .score{
 font-size:78px;
 font-weight:800;
-line-height:1;
 }
 
 .status{
-font-size:28px;
+font-size:26px;
 font-weight:700;
-margin-top:12px;
 color:#14B8A6;
 }
 
 .tip{
-margin-top:35px;
+margin-top:30px;
 font-size:22px;
 line-height:1.8;
 color:#64748B;
-max-width:700px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.law-line{
-background:#2563EB;
 }
 
 .law-card{
@@ -183,45 +171,35 @@ text-align:center;
 }
 
 .law-icon{
-font-size:60px;
+font-size:56px;
 margin-bottom:15px;
 }
 
 .law-title{
-font-size:36px;
+font-size:34px;
 font-weight:800;
 margin-bottom:15px;
 }
 
 .law-desc{
 font-size:18px;
-line-height:1.8;
 color:#64748B;
+line-height:1.8;
 }
 
 .law-btn{
 display:inline-block;
-
 margin-top:30px;
-
 padding:16px 32px;
-
-background:
-linear-gradient(
+border-radius:16px;
+text-decoration:none;
+color:white;
+font-weight:700;
+background:linear-gradient(
 135deg,
 #2563EB,
 #3B82F6
 );
-
-color:white;
-font-weight:700;
-text-decoration:none;
-
-border-radius:16px;
-}
-
-.value-line{
-background:#8B5CF6;
 }
 
 .value-grid{
@@ -235,54 +213,35 @@ background:white;
 padding:36px;
 border-radius:28px;
 text-align:center;
-
-box-shadow:
-0 15px 40px rgba(0,0,0,.06);
-}
-
-.value-card:nth-child(1){
-border-top:6px solid #2563EB;
-}
-
-.value-card:nth-child(2){
-border-top:6px solid #14B8A6;
-}
-
-.value-card:nth-child(3){
-border-top:6px solid #8B5CF6;
+box-shadow:0 15px 40px rgba(0,0,0,.06);
 }
 
 .value-icon{
-font-size:58px;
+font-size:54px;
 margin-bottom:15px;
 }
 
 .value-title{
-font-size:30px;
+font-size:28px;
 font-weight:800;
 margin-bottom:12px;
 }
 
 .value-desc{
-line-height:1.9;
+line-height:1.8;
 color:#64748B;
 }
 
 .footer{
 margin-top:80px;
-
 padding:120px 24px;
-
 text-align:center;
-
-background:
-linear-gradient(
+color:white;
+background:linear-gradient(
 135deg,
 #14B4C1,
 #5A86C7
 );
-
-color:white;
 }
 
 .footer-title{
@@ -294,7 +253,6 @@ margin-bottom:15px;
 .footer-desc{
 font-size:20px;
 margin-bottom:15px;
-opacity:.95;
 }
 
 @media(max-width:900px){
@@ -309,15 +267,6 @@ font-size:42px;
 
 .section-title{
 font-size:34px;
-}
-
-.score-circle{
-width:220px;
-height:220px;
-}
-
-.score{
-font-size:60px;
 }
 
 .value-grid{
@@ -351,6 +300,8 @@ UPRIGHT 365
 
 </div>
 
+</section>
+
 <section>
 
 <div class="container">
@@ -365,23 +316,15 @@ UPRIGHT 365
 
 <div class="score-circle">
 
-<div class="weather" id="weather">
-☀️
-</div>
+<div class="weather" id="weather"></div>
 
-<div class="score" id="score">
-92
-</div>
+<div class="score" id="score"></div>
 
-<div class="status" id="status">
-맑음
-</div>
+<div class="status" id="status"></div>
 
 </div>
 
-<div class="tip" id="tip">
-오늘은 작은 청렴 실천 하나를 기록해보는 건 어떨까요?
-</div>
+<div class="tip" id="tip"></div>
 
 </div>
 
@@ -389,8 +332,9 @@ UPRIGHT 365
 
 </section>
 
-
 <section>
+
+<div class="container">
 
 <h2 class="section-title">
 관련 법령
@@ -402,9 +346,7 @@ UPRIGHT 365
 
 <div class="law-icon">📖</div>
 
-<div class="law-title" id="law">
-이해충돌방지법 제5조
-</div>
+<div class="law-title" id="law"></div>
 
 <div class="law-desc">
 오늘의 청렴 메시지와 연계된 주요 법령입니다.
@@ -426,7 +368,6 @@ target="_blank">
 
 </section>
 
-
 <section>
 
 <div class="container">
@@ -440,57 +381,27 @@ target="_blank">
 <div class="value-grid">
 
 <div class="value-card">
-
-<div class="value-icon">
-✈️
-</div>
-
-<div class="value-title">
-안전
-</div>
-
+<div class="value-icon">✈️</div>
+<div class="value-title">안전</div>
 <div class="value-desc">
-신뢰받는 공항 운영은<br>
-청렴한 업무수행으로부터<br>
-시작됩니다.
+신뢰받는 공항 운영은 청렴한 업무수행으로부터 시작됩니다.
 </div>
-
 </div>
 
 <div class="value-card">
-
-<div class="value-icon">
-🛡️
-</div>
-
-<div class="value-title">
-투명
-</div>
-
+<div class="value-icon">🛡️</div>
+<div class="value-title">투명</div>
 <div class="value-desc">
-모든 의사결정은<br>
-공정하고 투명하게<br>
-이루어져야 합니다.
+모든 의사결정은 공정하고 투명하게 이루어져야 합니다.
 </div>
-
 </div>
 
 <div class="value-card">
-
-<div class="value-icon">
-🤝
-</div>
-
-<div class="value-title">
-상생
-</div>
-
+<div class="value-icon">🤝</div>
+<div class="value-title">상생</div>
 <div class="value-desc">
-이해관계자와의 신뢰는<br>
-청렴한 조직문화에서<br>
-만들어집니다.
+이해관계자와의 신뢰는 청렴한 조직문화에서 만들어집니다.
 </div>
-
 </div>
 
 </div>
@@ -498,7 +409,6 @@ target="_blank">
 </div>
 
 </section>
-
 
 <footer class="footer">
 
@@ -518,7 +428,7 @@ UPRIGHT 365
 
 <script>
 
-const items = [
+const items=[
 
 {
 quote:"사소한 편의 제공도 이해충돌의 시작이 될 수 있습니다.",
@@ -538,386 +448,35 @@ score:84,
 emoji:"⛅",
 status:"보통",
 tip:"오늘은 업무정보 관리 상태를 확인해보세요."
-},
-
-{
-quote:"청렴은 누군가 보고 있을 때보다 보지 않을 때 지켜집니다.",
-tag:"#청렴",
-law:"청탁금지법",
-score:97,
-emoji:"☀️",
-status:"매우 맑음",
-tip:"오늘은 작은 원칙 하나를 실천해보세요."
-},
-
-{
-quote:"공정한 업무수행은 조직의 신뢰를 높입니다.",
-tag:"#공정",
-law:"임직원 행동강령",
-score:88,
-emoji:"⛅",
-status:"보통",
-tip:"오늘은 의사결정 과정의 공정성을 점검해보세요."
-},
-
-{
-quote:"사적 이해관계는 반드시 신고해야 합니다.",
-tag:"#이해충돌",
-law:"이해충돌방지법 제5조",
-score:93,
-emoji:"🌤️",
-status:"맑음",
-tip:"오늘은 사적 이해관계 신고 대상이 있는지 점검해보세요."
-},
-
-{
-quote:"업무상 영향력을 사적으로 사용해서는 안 됩니다.",
-tag:"#공정성",
-law:"이해충돌방지법",
-score:89,
-emoji:"⛅",
-status:"보통",
-tip:"업무와 사적 관계를 구분해보는 건 어떨까요?"
-},
-
-{
-quote:"이해충돌은 예방이 가장 중요합니다.",
-tag:"#예방",
-law:"이해충돌방지법",
-score:95,
-emoji:"☀️",
-status:"매우 맑음",
-tip:"이해충돌 가능성을 미리 확인해보세요."
-},
-
-{
-quote:"부정청탁은 거절하는 것이 원칙입니다.",
-tag:"#청탁금지",
-law:"청탁금지법",
-score:91,
-emoji:"🌤️",
-status:"맑음",
-tip:"공정한 업무처리 원칙을 다시 확인해보세요."
-},
-
-{
-quote:"직무관련 금품 수수는 어떠한 경우에도 금지됩니다.",
-tag:"#금품수수",
-law:"청탁금지법",
-score:98,
-emoji:"☀️",
-status:"매우 맑음",
-tip:"금품·향응 수수 여부를 점검해보세요."
-},
-
-{
-quote:"업무상 취득한 정보는 보호되어야 합니다.",
-tag:"#정보보안",
-law:"개인정보보호법",
-score:90,
-emoji:"🌤️",
-status:"맑음",
-tip:"개인정보 취급 절차를 확인해보세요."
-},
-
-{
-quote:"정보 유출은 조직 신뢰를 훼손합니다.",
-tag:"#정보보호",
-law:"개인정보보호법",
-score:86,
-emoji:"⛅",
-status:"보통",
-tip:"업무용 파일 관리 상태를 점검해보세요."
-},
-
-{
-quote:"존중은 건강한 조직문화의 시작입니다.",
-tag:"#상호존중",
-law:"직장 내 괴롭힘 금지",
-score:92,
-emoji:"🌤️",
-status:"맑음",
-tip:"오늘 하루 존중의 언어를 사용해보세요."
-},
-
-{
-quote:"공정한 채용은 신뢰의 출발점입니다.",
-tag:"#공정채용",
-law:"채용절차의 공정화에 관한 법률",
-score:94,
-emoji:"🌤️",
-status:"맑음",
-tip:"공정채용 원칙을 다시 확인해보세요."
-},
-
-{
-quote:"투명한 계약은 청렴의 시작입니다.",
-tag:"#계약윤리",
-law:"국가계약법",
-score:88,
-emoji:"⛅",
-status:"보통",
-tip:"계약 절차 준수 여부를 점검해보세요."
-},
-
-{
-quote:"사적 이해관계는 반드시 신고해야 합니다.",
-tag:"#이해충돌",
-law:"이해충돌방지법",
-score:93,
-emoji:"🌤️",
-status:"맑음",
-tip:"오늘은 사적 이해관계 신고 대상이 있는지 점검해보세요."
-},
-
-{
-quote:"업무상 영향력을 사적으로 사용해서는 안 됩니다.",
-tag:"#공정성",
-law:"이해충돌방지법",
-score:89,
-emoji:"⛅",
-status:"보통",
-tip:"업무와 사적 관계를 구분해보는 건 어떨까요?"
-},
-
-{
-quote:"부정청탁은 거절하는 것이 원칙입니다.",
-tag:"#청탁금지",
-law:"청탁금지법",
-score:91,
-emoji:"🌤️",
-status:"맑음",
-tip:"오늘은 공정한 업무처리 원칙을 다시 확인해보세요."
-},
-
-{
-quote:"직무관련 금품 수수는 어떠한 경우에도 금지됩니다.",
-tag:"#금품수수",
-law:"청탁금지법",
-score:98,
-emoji:"☀️",
-status:"매우 맑음",
-tip:"금품·향응 수수 여부를 점검해보세요."
-},
-
-{
-quote:"업무상 취득한 정보는 보호되어야 합니다.",
-tag:"#정보보안",
-law:"개인정보보호법",
-score:90,
-emoji:"🌤️",
-status:"맑음",
-tip:"개인정보 취급 절차를 확인해보세요."
-},
-
-{
-quote:"정보 유출은 조직 신뢰를 훼손합니다.",
-tag:"#정보보호",
-law:"개인정보보호법",
-score:86,
-emoji:"⛅",
-status:"보통",
-tip:"업무용 파일 관리 상태를 점검해보세요."
-},
-
-{
-quote:"존중은 건강한 조직문화의 시작입니다.",
-tag:"#상호존중",
-law:"직장 내 괴롭힘 금지",
-score:92,
-emoji:"🌤️",
-status:"맑음",
-tip:"오늘 하루 존중의 언어를 사용해보세요."
-},
-
-{
-quote:"공정한 채용은 신뢰의 출발점입니다.",
-tag:"#공정채용",
-law:"채용절차의 공정화에 관한 법률",
-score:94,
-emoji:"🌤️",
-status:"맑음",
-tip:"공정채용 원칙을 다시 확인해보세요."
-},
-
-{
-quote:"투명한 계약은 청렴의 시작입니다.",
-tag:"#계약윤리",
-law:"국가계약법",
-score:88,
-emoji:"⛅",
-status:"보통",
-tip:"계약 절차 준수 여부를 점검해보세요."
-},
-
-{
-quote:"작은 원칙이 큰 신뢰를 만듭니다.",
-tag:"#신뢰",
-law:"임직원행동강령",
-score:95,
-emoji:"☀️",
-status:"매우 맑음",
-tip:"오늘 한 가지 원칙을 끝까지 지켜보세요."
-},
-
-{
-quote:"공공의 이익은 개인의 이익보다 우선합니다.",
-tag:"#공공성",
-law:"이해충돌방지법",
-score:94,
-emoji:"🌤️",
-status:"맑음",
-tip:"오늘의 판단 기준을 공공성에 두어보세요."
-},
-
-{
-quote:"모든 보고는 사실에 근거해야 합니다.",
-tag:"#정직",
-law:"임직원행동강령",
-score:96,
-emoji:"☀️",
-status:"매우 맑음",
-tip:"보고 자료의 정확성을 다시 확인해보세요."
-},
-
-{
-quote:"갑질 없는 조직이 건강한 조직입니다.",
-tag:"#갑질예방",
-law:"근로기준법",
-score:89,
-emoji:"⛅",
-status:"보통",
-tip:"상대방 입장에서 한 번 더 생각해보세요."
-},
-
-{
-quote:"청렴은 선택이 아닌 의무입니다.",
-tag:"#청렴",
-law:"청탁금지법",
-score:97,
-emoji:"☀️",
-status:"매우 맑음",
-tip:"오늘의 청렴 실천 항목을 점검해보세요."
-},
-
-{
-quote:"투명한 정보공개가 신뢰를 만듭니다.",
-tag:"#정보공개",
-law:"공공기관의 정보공개에 관한 법률",
-score:90,
-emoji:"🌤️",
-status:"맑음",
-tip:"공개 가능한 정보를 적극적으로 공유해보세요."
-},
-
-{
-quote:"직무상 권한은 국민을 위해 사용되어야 합니다.",
-tag:"#책임",
-law:"임직원행동강령",
-score:95,
-emoji:"☀️",
-status:"매우 맑음",
-tip:"권한이 올바르게 사용되고 있는지 점검해보세요."
-},
-
-{
-quote:"청렴은 보이지 않는 곳에서 완성됩니다.",
-tag:"#윤리",
-law:"임직원행동강령",
-score:93,
-emoji:"🌤️",
-status:"맑음",
-tip:"누가 보지 않아도 원칙을 지켜보세요."
-},
-
-{
-quote:"안전한 공항은 청렴한 업무에서 시작됩니다.",
-tag:"#안전청렴",
-law:"중대재해처벌법",
-score:94,
-emoji:"🌤️",
-status:"맑음",
-tip:"안전수칙과 청렴수칙을 함께 점검해보세요."
-},
-
-{
-quote:"협력사와의 관계에서도 공정함을 지켜야 합니다.",
-tag:"#상생",
-law:"공정거래법",
-score:91,
-emoji:"🌤️",
-status:"맑음",
-tip:"이해관계자와의 관계를 점검해보세요."
-},
-
-{
-quote:"모든 계약은 공정한 절차를 따라야 합니다.",
-tag:"#계약",
-law:"국가계약법",
-score:92,
-emoji:"🌤️",
-status:"맑음",
-tip:"절차 준수 여부를 확인해보세요."
 }
 
 ];
 
-/* 날짜 표시 */
+const today=new Date();
 
-const today = new Date();
-
-document.getElementById("date").innerText =
-today.toLocaleDateString(
-"ko-KR",
-{
+document.getElementById("date").innerText=
+today.toLocaleDateString("ko-KR",{
 year:"numeric",
 month:"long",
 day:"numeric",
 weekday:"long"
-}
-);
+});
 
-/* 연중 몇 번째 날인지 계산 */
-
-const dayOfYear =
-Math.floor(
-(
-today -
-new Date(today.getFullYear(),0,0)
-)
-/
-86400000
-);
-
-/* 문구 자동 순환 */
-
-const item =
+const item=
 items[
-dayOfYear % items.length
+Math.floor(
+(today-new Date(today.getFullYear(),0,0))
+/86400000
+)%items.length
 ];
 
-/* 화면 반영 */
-
-document.getElementById("quote").innerText =
-"“" + item.quote + "”";
-
-document.getElementById("tag").innerText =
-item.tag;
-
-document.getElementById("law").innerText =
-item.law;
-
-document.getElementById("score").innerText =
-item.score;
-
-document.getElementById("weather").innerText =
-item.emoji;
-
-document.getElementById("status").innerText =
-item.status;
-
-document.getElementById("tip").innerText =
-item.tip;
+quote.innerText="“"+item.quote+"”";
+tag.innerText=item.tag;
+law.innerText=item.law;
+score.innerText=item.score;
+weather.innerText=item.emoji;
+status.innerText=item.status;
+tip.innerText=item.tip;
 
 </script>
 
