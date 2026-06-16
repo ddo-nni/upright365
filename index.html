@@ -1,22 +1,93 @@
 <!DOCTYPE html>
+
 <html lang="ko">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UPRIGHT 365</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+/* =========================
+   1. RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+width:100%;
+overflow-x:hidden;
+}
 
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:linear-gradient(180deg,#EAF8FF 0%,#D7F2FF 15%,#C6E8FF 35%,#F4FAFF 65%,#FFFFFF 100%);
+background:linear-gradient(
+180deg,
+#EAF8FF 0%,
+#D7F2FF 15%,
+#C6E8FF 35%,
+#F4FAFF 65%,
+#FFFFFF 100%
+);
 background-attachment:fixed;
 color:#0F172A;
+width:100%;
 overflow-x:hidden;
 word-break:keep-all;
 }
+
+/* =========================
+   2. 공통 레이아웃
+========================= */
+
+section{
+padding:80px 24px;
+}
+
+.container{
+max-width:1100px;
+width:100%;
+margin:auto;
+}
+
+.card{
+width:100%;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(24px);
+border-radius:40px;
+padding:60px;
+box-shadow:
+0 30px 80px rgba(15,23,42,.08),
+0 10px 30px rgba(20,184,166,.08);
+}
+
+.section-title{
+font-size:52px;
+font-weight:800;
+margin-bottom:12px;
+}
+
+.section-line{
+width:80px;
+height:5px;
+border-radius:999px;
+margin-bottom:30px;
+}
+
+.score-line{background:#14B8A6;}
+.law-line{background:#2563EB;}
+.check-line{background:#F59E0B;}
+.value-line{background:#8B5CF6;}
+
+/* =========================
+   3. HERO
+========================= */
 
 .hero{
 min-height:100vh;
@@ -26,22 +97,30 @@ align-items:center;
 text-align:center;
 padding:60px 24px;
 position:relative;
+overflow:hidden;
 }
 
-.hero:before{
+.hero::before{
 content:"";
 position:absolute;
-width:700px;
-height:700px;
-background:radial-gradient(circle,rgba(20,180,193,.18),transparent 70%);
-top:-250px;
+width:500px;
+height:500px;
+background:
+radial-gradient(
+circle,
+rgba(20,180,193,.18),
+transparent 70%
+);
+top:-180px;
 left:50%;
 transform:translateX(-50%);
-filter:blur(40px);
+filter:blur(30px);
+pointer-events:none;
 }
 
 .hero-content{
 max-width:1000px;
+width:100%;
 position:relative;
 z-index:1;
 }
@@ -69,58 +148,24 @@ margin-bottom:30px;
 }
 
 .quote{
-font-size:clamp(42px,6vw,80px);
+font-size:clamp(32px,6vw,80px);
 font-weight:800;
 line-height:1.5;
 max-width:900px;
 margin:auto;
+overflow-wrap:break-word;
 }
 
 .tag{
-margin-top:30px;
+margin-top:24px;
 font-size:22px;
 font-weight:700;
 color:#14B4C1;
 }
 
-section{
-padding:80px 24px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-}
-
-.section-title{
-font-size:52px;
-font-weight:800;
-margin-bottom:12px;
-}
-
-.section-line{
-width:80px;
-height:5px;
-border-radius:999px;
-margin-bottom:30px;
-}
-
-.score-line{background:#14B8A6}
-.law-line{background:#2563EB}
-.check-line{background:#F59E0B}
-.value-line{background:#8B5CF6}
-
-.card{
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(24px);
-border-radius:40px;
-padding:60px;
-box-shadow:
-0 30px 80px rgba(15,23,42,.08),
-0 10px 30px rgba(20,184,166,.08);
-}
-
-/* 청렴지수 */
+/* =========================
+4. 오늘의 청렴지수
+========================= */
 
 .score-card{
 text-align:center;
@@ -150,7 +195,7 @@ color:#14B8A6;
 }
 
 .status{
-font-size:50px;
+font-size:40px;
 font-weight:800;
 color:#0F172A;
 margin-top:4px;
@@ -158,13 +203,15 @@ margin-top:4px;
 
 .tip{
 margin-top:12px;
-font-size:30px;
+font-size:24px;
 line-height:1.8;
 color:#64748B;
 max-width:700px;
 }
 
-/* 관련 법령 */
+/* =========================
+5. 관련 법령
+========================= */
 
 .law-card{
 text-align:center;
@@ -176,13 +223,13 @@ margin-bottom:15px;
 }
 
 .law-title{
-font-size:50px;
+font-size:42px;
 font-weight:800;
 margin-bottom:15px;
 }
 
 .law-desc{
-font-size:30px;
+font-size:24px;
 line-height:1.8;
 color:#64748B;
 }
@@ -193,12 +240,26 @@ margin-top:30px;
 padding:16px 32px;
 border-radius:16px;
 text-decoration:none;
-color:#fff;
 font-weight:700;
-background:linear-gradient(135deg,#2563EB,#3B82F6);
+color:#fff;
+background:
+linear-gradient(
+135deg,
+#2563EB,
+#3B82F6
+);
+transition:.2s;
 }
 
-/* 체크리스트 */
+.law-btn:hover{
+transform:translateY(-2px);
+box-shadow:
+0 10px 30px rgba(37,99,235,.25);
+}
+
+/* =========================
+6. 청렴 체크리스트
+========================= */
 
 .checklist-card{
 padding:20px 40px;
@@ -247,7 +308,9 @@ font-weight:700;
 text-align:center;
 }
 
-/* 가치 */
+/* =========================
+7. 청렴이 만드는 가치
+========================= */
 
 .value-grid{
 display:grid;
@@ -260,7 +323,8 @@ background:#fff;
 padding:36px;
 border-radius:28px;
 text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,.06);
+box-shadow:
+0 15px 40px rgba(0,0,0,.06);
 transition:.3s;
 }
 
@@ -268,20 +332,49 @@ transition:.3s;
 transform:translateY(-8px);
 }
 
-.value-card:nth-child(1){border-top:6px solid #2563EB}
-.value-card:nth-child(2){border-top:6px solid #14B8A6}
-.value-card:nth-child(3){border-top:6px solid #8B5CF6}
+.value-card:nth-child(1){
+border-top:6px solid #2563EB;
+}
 
-.value-icon{font-size:54px;margin-bottom:15px}
-.value-title{font-size:28px;font-weight:800;margin-bottom:12px}
-.value-desc{line-height:1.8;color:#64748B}
+.value-card:nth-child(2){
+border-top:6px solid #14B8A6;
+}
+
+.value-card:nth-child(3){
+border-top:6px solid #8B5CF6;
+}
+
+.value-icon{
+font-size:54px;
+margin-bottom:15px;
+}
+
+.value-title{
+font-size:28px;
+font-weight:800;
+margin-bottom:12px;
+}
+
+.value-desc{
+line-height:1.8;
+color:#64748B;
+}
+
+/* =========================
+8. FOOTER
+========================= */
 
 .footer{
 margin-top:80px;
 padding:120px 24px;
 text-align:center;
 color:#fff;
-background:linear-gradient(135deg,#14B4C1,#5A86C7);
+background:
+linear-gradient(
+135deg,
+#14B4C1,
+#5A86C7
+);
 }
 
 .footer-title{
@@ -294,180 +387,3 @@ margin-bottom:15px;
 font-size:20px;
 margin-bottom:15px;
 }
-
-@media(max-width:900px){
-
-.hero-title{font-size:34px}
-.quote{font-size:42px}
-.section-title{font-size:34px}
-
-.score-layout{
-flex-direction:column;
-gap:20px;
-}
-
-.score{
-font-size:52px;
-}
-
-.weather{
-font-size:52px;
-}
-
-.status{
-font-size:52px;
-}
-
-.value-grid{
-grid-template-columns:1fr;
-}
-
-.check-row{
-font-size:18px;
-}
-
-}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-<div class="hero-content">
-<div class="brand">UPRIGHT 365</div>
-<div class="date" id="date"></div>
-<div class="hero-title">오늘의 청렴 한마디</div>
-<div class="quote" id="quote"></div>
-<div class="tag" id="tag"></div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="section-title">오늘의 청렴지수</h2>
-<div class="section-line score-line"></div>
-
-<div class="card score-card">
-
-<div class="score-layout">
-
-<div class="weather" id="weather"></div>
-
-<div class="score" id="score"></div>
-
-<div class="status" id="status"></div>
-
-<div class="tip" id="tip"></div>
-
-</div>
-
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="section-title">관련 법령</h2>
-<div class="section-line law-line"></div>
-
-<div class="card law-card">
-<div class="law-icon">📖</div>
-<div class="law-title" id="law"></div>
-<div class="law-desc">오늘의 청렴 메시지와 연계된 주요 법령입니다.</div>
-<a class="law-btn" href="https://www.law.go.kr" target="_blank">법령 전문 보기</a>
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-<h2 class="section-title">오늘의 청렴 체크리스트</h2>
-<div class="section-line check-line"></div>
-
-<div class="card checklist-card">
-
-<label class="check-row">
-<input type="checkbox">
-<span>지금 하는 행동이 공개되어도 부끄럽지 않은가?</span>
-</label>
-
-<label class="check-row">
-<input type="checkbox">
-<span>타인에게 부당한 요구를 하고 있진 않은가?</span>
-</label>
-
-<label class="check-row">
-<input type="checkbox">
-<span>나의 행동이 조직의 신뢰를 훼손할 가능성은 없는가?</span>
-</label>
-
-<div class="check-result">
-☑️ 3개 모두 체크할 수 있다면 오늘도 청렴한 하루입니다.
-</div>
-
-</div>
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2 class="section-title">청렴이 만드는 가치</h2>
-<div class="section-line value-line"></div>
-
-<div class="value-grid">
-
-<div class="value-card">
-<div class="value-icon">✈️</div>
-<div class="value-title">안전</div>
-<div class="value-desc">신뢰받는 공항 운영은 청렴한 업무수행으로부터 시작됩니다.</div>
-</div>
-
-<div class="value-card">
-<div class="value-icon">🛡️</div>
-<div class="value-title">투명</div>
-<div class="value-desc">모든 의사결정은 공정하고 투명하게 이루어져야 합니다.</div>
-</div>
-
-<div class="value-card">
-<div class="value-icon">🤝</div>
-<div class="value-title">상생</div>
-<div class="value-desc">이해관계자와의 신뢰는 청렴한 조직문화에서 만들어집니다.</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<footer class="footer">
-<div class="footer-title">UPRIGHT 365</div>
-<div class="footer-desc">매일의 청렴이 신뢰를 만듭니다.</div>
-<div>인천공항시설관리</div>
-</footer>
-
-<script>
-const items=[
-{quote:"사소한 편의 제공도 이해충돌의 시작이 될 수 있습니다.",tag:"#이해충돌",law:"이해충돌방지법 제5조",score:92,emoji:"🌤️",status:"맑음",tip:"오늘은 이해충돌 여부를 한 번 더 점검해보는 건 어떨까요?"},
-{quote:"업무상 알게 된 정보를 개인적 이익에 활용할 수 없습니다.",tag:"#정보보호",law:"임직원 행동강령",score:84,emoji:"⛅",status:"보통",tip:"오늘은 업무정보 관리 상태를 확인해보세요."},
-{quote:"공공의 이익은 개인의 이익보다 우선합니다.",tag:"#공공성",law:"이해충돌방지법",score:94,emoji:"🌤️",status:"맑음",tip:"오늘은 공공성을 기준으로 판단해보세요."},
-{quote:"청렴은 누군가 보고 있을 때보다 보지 않을 때 지켜집니다.",tag:"#청렴",law:"청탁금지법",score:97,emoji:"☀️",status:"매우 맑음",tip:"오늘은 작은 원칙 하나를 실천해보세요."},
-{quote:"오늘의 작은 실천이 내일의 신뢰를 만듭니다.",tag:"#UPRIGHT365",law:"임직원 행동강령",score:99,emoji:"☀️",status:"매우 맑음",tip:"오늘 한 가지 청렴 실천을 기록해보세요."}
-];
-
-const today=new Date();
-document.getElementById("date").innerText=today.toLocaleDateString("ko-KR",{year:"numeric",month:"long",day:"numeric",weekday:"long"});
-
-const day=Math.floor((today-new Date(today.getFullYear(),0,0))/86400000);
-const item=items[day%items.length];
-
-document.getElementById("quote").innerText="“"+item.quote+"”";
-document.getElementById("tag").innerText=item.tag;
-document.getElementById("law").innerText=item.law;
-document.getElementById("score").innerText=item.score+"점";
-document.getElementById("weather").innerText=item.emoji;
-document.getElementById("status").innerText=item.status;
-document.getElementById("tip").innerText=item.tip;
-</script>
-
-</body>
-</html>
