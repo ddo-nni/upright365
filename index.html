@@ -126,35 +126,35 @@ text-align:center;
 
 .score-layout{
 display:flex;
-justify-content:center;
+flex-direction:column;
 align-items:center;
-gap:40px;
+gap:15px;
 margin-bottom:20px;
 }
 
 .score{
-font-size:64px;
+font-size:100px;
 font-weight:800;
 color:#14B8A6;
 line-height:1;
 }
 
-.score-right{
+.weather-wrap{
 display:flex;
 align-items:center;
-gap:16px;
+gap:10px;
 }
 
 .weather{
-font-size:64px;
+font-size:42px;
 line-height:1;
 }
 
 .status{
-font-size:64px;
-font-weight:800;
+font-size:36px;
+font-weight:700;
+color:#000;
 line-height:1;
-color:#14B8A6;
 }
 
 .tip{
@@ -351,12 +351,14 @@ font-size:18px;
 <div class="card score-card">
 
 <div class="score-layout">
+
 <div class="score" id="score"></div>
 
-<div class="score-right">
+<div class="weather-wrap">
 <div class="weather" id="weather"></div>
 <div class="status" id="status"></div>
 </div>
+
 </div>
 
 <div class="tip" id="tip"></div>
