@@ -6,376 +6,93 @@
 <title>UPRIGHT 365</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:linear-gradient(
-180deg,
-#EAF8FF 0%,
-#D7F2FF 15%,
-#C6E8FF 35%,
-#F4FAFF 65%,
-#FFFFFF 100%
-);
-background-attachment:fixed;
-color:#0F172A;
-overflow-x:hidden;
-word-break:keep-all;
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:60px 24px;
-}
-
-.hero-content{
-max-width:1000px;
-}
-
-.brand{
-font-size:20px;
-font-weight:800;
-letter-spacing:8px;
-color:#14B4C1;
-margin-bottom:20px;
-}
-
-.date{
-font-size:22px;
-font-weight:600;
-color:#94A3B8;
-margin-bottom:20px;
-}
-
-.hero-title{
-font-size:52px;
-font-weight:800;
-color:#94A3B8;
-margin-bottom:30px;
-}
-
-.quote{
-font-size:clamp(40px,6vw,80px);
-font-weight:800;
-line-height:1.5;
-}
-
-.tag{
-margin-top:24px;
-font-size:22px;
-font-weight:700;
-color:#14B4C1;
-}
-
-section{
-padding:80px 24px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-}
-
-.section-title{
-font-size:52px;
-font-weight:800;
-margin-bottom:12px;
-}
-
-.section-line{
-width:80px;
-height:5px;
-border-radius:999px;
-margin-bottom:30px;
-}
-
-.card{
-background:rgba(255,255,255,.82);
-backdrop-filter:blur(18px);
-border-radius:36px;
-padding:48px;
-box-shadow:0 20px 60px rgba(0,0,0,.08);
-}
-
-.score-line{
-background:#14B8A6;
-}
-
-.law-line{
-background:#2563EB;
-}
-
-.value-line{
-background:#8B5CF6;
-}
-
-.score-card{
-text-align:center;
-}
-
-.score-circle{
-width:260px;
-height:260px;
-border-radius:50%;
-margin:30px auto;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:linear-gradient(
-135deg,
-#F8FFFF,
-#DFFCF8
-);
-box-shadow:0 25px 50px rgba(20,184,166,.15);
-}
-
-.weather{
-font-size:58px;
-}
-
-.score{
-font-size:78px;
-font-weight:800;
-}
-
-.status{
-font-size:26px;
-font-weight:700;
-color:#14B8A6;
-}
-
-.tip{
-margin-top:30px;
-font-size:22px;
-line-height:1.8;
-color:#64748B;
-}
-
-.law-card{
-text-align:center;
-}
-
-.law-icon{
-font-size:56px;
-margin-bottom:15px;
-}
-
-.law-title{
-font-size:34px;
-font-weight:800;
-margin-bottom:15px;
-}
-
-.law-desc{
-font-size:18px;
-color:#64748B;
-line-height:1.8;
-}
-
-.law-btn{
-display:inline-block;
-margin-top:30px;
-padding:16px 32px;
-border-radius:16px;
-text-decoration:none;
-color:white;
-font-weight:700;
-background:linear-gradient(
-135deg,
-#2563EB,
-#3B82F6
-);
-}
-
-.value-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
-}
-
-.value-card{
-background:white;
-padding:36px;
-border-radius:28px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,.06);
-}
-
-.value-icon{
-font-size:54px;
-margin-bottom:15px;
-}
-
-.value-title{
-font-size:28px;
-font-weight:800;
-margin-bottom:12px;
-}
-
-.value-desc{
-line-height:1.8;
-color:#64748B;
-}
-
-.footer{
-margin-top:80px;
-padding:120px 24px;
-text-align:center;
-color:white;
-background:linear-gradient(
-135deg,
-#14B4C1,
-#5A86C7
-);
-}
-
-.footer-title{
-font-size:42px;
-font-weight:800;
-margin-bottom:15px;
-}
-
-.footer-desc{
-font-size:20px;
-margin-bottom:15px;
-}
-
-@media(max-width:900px){
-
-.hero-title{
-font-size:34px;
-}
-
-.quote{
-font-size:42px;
-}
-
-.section-title{
-font-size:34px;
-}
-
-.value-grid{
-grid-template-columns:1fr;
-}
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#EAF8FF 0%,#D7F2FF 15%,#C6E8FF 35%,#F4FAFF 65%,#FFFFFF 100%);background-attachment:fixed;color:#0F172A;overflow-x:hidden;word-break:keep-all}
+.hero{min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:60px 24px;position:relative}
+.hero:before{content:"";position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(20,180,193,.18),transparent 70%);top:-250px;left:50%;transform:translateX(-50%);filter:blur(40px)}
+.hero-content{max-width:1000px;position:relative;z-index:1}
+.brand{font-size:22px;font-weight:800;letter-spacing:8px;color:#14B4C1;margin-bottom:20px}
+.date{font-size:24px;font-weight:600;color:#94A3B8;margin-bottom:20px}
+.hero-title{font-size:52px;font-weight:800;color:#94A3B8;margin-bottom:30px}
+.quote{font-size:clamp(42px,6vw,80px);font-weight:800;line-height:1.5;max-width:900px;margin:auto}
+.tag{margin-top:24px;font-size:22px;font-weight:700;color:#14B4C1}
+section{padding:80px 24px}
+.container{max-width:1100px;margin:auto}
+.section-title{font-size:52px;font-weight:800;margin-bottom:12px}
+.section-line{width:80px;height:5px;border-radius:999px;margin-bottom:30px}
+.score-line{background:#14B8A6}
+.law-line{background:#2563EB}
+.value-line{background:#8B5CF6}
+.card{background:rgba(255,255,255,.82);backdrop-filter:blur(18px);border-radius:36px;padding:48px;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.score-card{text-align:center}
+.score-circle{width:260px;height:260px;border-radius:50%;margin:30px auto;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(135deg,#F8FFFF,#DFFCF8);box-shadow:0 25px 50px rgba(20,184,166,.15)}
+.weather{font-size:58px}
+.score{font-size:78px;font-weight:800}
+.status{font-size:26px;font-weight:700;color:#14B8A6}
+.tip{margin-top:30px;font-size:22px;line-height:1.8;color:#64748B}
+.law-card{text-align:center}
+.law-icon{font-size:56px;margin-bottom:15px}
+.law-title{font-size:34px;font-weight:800;margin-bottom:15px}
+.law-desc{font-size:18px;line-height:1.8;color:#64748B}
+.law-btn{display:inline-block;margin-top:30px;padding:16px 32px;border-radius:16px;text-decoration:none;color:#fff;font-weight:700;background:linear-gradient(135deg,#2563EB,#3B82F6)}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value-card{background:#fff;padding:36px;border-radius:28px;text-align:center;box-shadow:0 15px 40px rgba(0,0,0,.06);transition:.3s}
+.value-card:hover{transform:translateY(-8px)}
+.value-icon{font-size:54px;margin-bottom:15px}
+.value-title{font-size:28px;font-weight:800;margin-bottom:12px}
+.value-desc{line-height:1.8;color:#64748B}
+.footer{margin-top:80px;padding:120px 24px;text-align:center;color:#fff;background:linear-gradient(135deg,#14B4C1,#5A86C7)}
+.footer-title{font-size:42px;font-weight:800;margin-bottom:15px}
+.footer-desc{font-size:20px;margin-bottom:15px}
+@media(max-width:900px){.hero-title{font-size:34px}.quote{font-size:42px}.section-title{font-size:34px}.score-circle{width:220px;height:220px}.score{font-size:56px}.value-grid{grid-template-columns:1fr}}
 </style>
-</head>
 
+</head>
 <body>
 
 <section class="hero">
-
 <div class="hero-content">
-
-<div class="brand">
-UPRIGHT 365
-</div>
-
+<div class="brand">UPRIGHT 365</div>
 <div class="date" id="date"></div>
-
-<div class="hero-title">
-오늘의 청렴 한마디
-</div>
-
+<div class="hero-title">오늘의 청렴 한마디</div>
 <div class="quote" id="quote"></div>
-
 <div class="tag" id="tag"></div>
-
 </div>
-
 </section>
 
 <section>
-
 <div class="container">
-
-<h2 class="section-title">
-오늘의 청렴지수
-</h2>
-
+<h2 class="section-title">오늘의 청렴지수</h2>
 <div class="section-line score-line"></div>
-
 <div class="card score-card">
-
 <div class="score-circle">
-
 <div class="weather" id="weather"></div>
-
 <div class="score" id="score"></div>
-
 <div class="status" id="status"></div>
-
 </div>
-
 <div class="tip" id="tip"></div>
-
 </div>
-
 </div>
-
 </section>
 
 <section>
-
 <div class="container">
-
-<h2 class="section-title">
-관련 법령
-</h2>
-
+<h2 class="section-title">관련 법령</h2>
 <div class="section-line law-line"></div>
-
 <div class="card law-card">
-
 <div class="law-icon">📖</div>
-
 <div class="law-title" id="law"></div>
-
-<div class="law-desc">
-오늘의 청렴 메시지와 연계된 주요 법령입니다.
+<div class="law-desc">오늘의 청렴 메시지와 연계된 주요 법령입니다.</div>
+<a id="lawLink" class="law-btn" href="https://www.law.go.kr" target="_blank">법령 전문 보기</a>
 </div>
-
-<a
-id="lawLink"
-class="law-btn"
-href="https://www.law.go.kr"
-target="_blank">
-
-법령 전문 보기
-
-</a>
-
 </div>
-
-</div>
-
 </section>
 
-<section>
-
+  <section>
 <div class="container">
 
-<h2 class="section-title">
-청렴이 만드는 가치
-</h2>
-
+<h2 class="section-title">청렴이 만드는 가치</h2>
 <div class="section-line value-line"></div>
 
 <div class="value-grid">
@@ -383,76 +100,59 @@ target="_blank">
 <div class="value-card">
 <div class="value-icon">✈️</div>
 <div class="value-title">안전</div>
-<div class="value-desc">
-신뢰받는 공항 운영은 청렴한 업무수행으로부터 시작됩니다.
-</div>
+<div class="value-desc">신뢰받는 공항 운영은 청렴한 업무수행으로부터 시작됩니다.</div>
 </div>
 
 <div class="value-card">
 <div class="value-icon">🛡️</div>
 <div class="value-title">투명</div>
-<div class="value-desc">
-모든 의사결정은 공정하고 투명하게 이루어져야 합니다.
-</div>
+<div class="value-desc">모든 의사결정은 공정하고 투명하게 이루어져야 합니다.</div>
 </div>
 
 <div class="value-card">
 <div class="value-icon">🤝</div>
 <div class="value-title">상생</div>
-<div class="value-desc">
-이해관계자와의 신뢰는 청렴한 조직문화에서 만들어집니다.
-</div>
+<div class="value-desc">이해관계자와의 신뢰는 청렴한 조직문화에서 만들어집니다.</div>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
 <footer class="footer">
-
-<div class="footer-title">
-UPRIGHT 365
-</div>
-
-<div class="footer-desc">
-매일의 청렴이 신뢰를 만듭니다.
-</div>
-
-<div>
-인천공항시설관리
-</div>
-
+<div class="footer-title">UPRIGHT 365</div>
+<div class="footer-desc">매일의 청렴이 신뢰를 만듭니다.</div>
+<div>인천공항시설관리</div>
 </footer>
 
 <script>
 
 const items=[
 
-{
-quote:"사소한 편의 제공도 이해충돌의 시작이 될 수 있습니다.",
-tag:"#이해충돌",
-law:"이해충돌방지법 제5조",
-score:92,
-emoji:"🌤️",
-status:"맑음",
-tip:"오늘은 이해충돌 여부를 한 번 더 점검해보는 건 어떨까요?"
-},
+{quote:"사소한 편의 제공도 이해충돌의 시작이 될 수 있습니다.",tag:"#이해충돌",law:"이해충돌방지법 제5조",score:92,emoji:"🌤️",status:"맑음",tip:"오늘은 이해충돌 여부를 한 번 더 점검해보는 건 어떨까요?"},
 
-{
-quote:"업무상 알게 된 정보를 개인적 이익에 활용할 수 없습니다.",
-tag:"#정보보호",
-law:"임직원 행동강령",
-score:84,
-emoji:"⛅",
-status:"보통",
-tip:"오늘은 업무정보 관리 상태를 확인해보세요."
-}
+{quote:"업무상 알게 된 정보를 개인적 이익에 활용할 수 없습니다.",tag:"#정보보호",law:"임직원 행동강령",score:84,emoji:"⛅",status:"보통",tip:"오늘은 업무정보 관리 상태를 확인해보세요."},
+
+{quote:"공공의 이익은 개인의 이익보다 우선합니다.",tag:"#공공성",law:"이해충돌방지법",score:94,emoji:"🌤️",status:"맑음",tip:"오늘은 공공성을 기준으로 판단해보세요."},
+
+{quote:"청렴은 누군가 보고 있을 때보다 보지 않을 때 지켜집니다.",tag:"#청렴",law:"청탁금지법",score:97,emoji:"☀️",status:"매우 맑음",tip:"오늘은 작은 원칙 하나를 실천해보세요."},
+
+{quote:"직무상 권한은 국민을 위해 사용되어야 합니다.",tag:"#책임",law:"임직원 행동강령",score:95,emoji:"☀️",status:"매우 맑음",tip:"권한 남용 요소가 없는지 점검해보세요."},
+
+{quote:"청렴은 규정 준수에서 시작됩니다.",tag:"#준법",law:"청탁금지법",score:91,emoji:"🌤️",status:"맑음",tip:"오늘은 관련 규정을 한 번 더 확인해보세요."},
+
+{quote:"작은 부주의가 큰 부패로 이어질 수 있습니다.",tag:"#경각심",law:"임직원 행동강령",score:82,emoji:"⛅",status:"보통",tip:"업무 처리 절차를 다시 점검해보세요."},
+
+{quote:"투명한 정보공개가 신뢰를 만듭니다.",tag:"#정보공개",law:"공공기관 운영법",score:89,emoji:"⛅",status:"보통",tip:"정보공개 절차를 확인해보세요."},
+
+{quote:"모든 이해관계자를 공정하게 대해야 합니다.",tag:"#공정",law:"임직원 행동강령",score:93,emoji:"🌤️",status:"맑음",tip:"업무 상대방을 공정하게 대했는지 돌아보세요."},
+
+{quote:"청렴은 조직문화의 기본입니다.",tag:"#조직문화",law:"임직원 행동강령",score:90,emoji:"🌤️",status:"맑음",tip:"동료와 함께 청렴을 실천해보세요."}
 
 ];
 
-const today=new Date();
+  const today=new Date();
 
 document.getElementById("date").innerText=
 today.toLocaleDateString("ko-KR",{
@@ -462,21 +162,16 @@ day:"numeric",
 weekday:"long"
 });
 
-const item=
-items[
-Math.floor(
-(today-new Date(today.getFullYear(),0,0))
-/86400000
-)%items.length
-];
+const day=Math.floor((today-new Date(today.getFullYear(),0,0))/86400000);
+const item=items[day%items.length];
 
-quote.innerText="“"+item.quote+"”";
-tag.innerText=item.tag;
-law.innerText=item.law;
-score.innerText=item.score;
-weather.innerText=item.emoji;
-status.innerText=item.status;
-tip.innerText=item.tip;
+document.getElementById("quote").innerText="“"+item.quote+"”";
+document.getElementById("tag").innerText=item.tag;
+document.getElementById("law").innerText=item.law;
+document.getElementById("score").innerText=item.score;
+document.getElementById("weather").innerText=item.emoji;
+document.getElementById("status").innerText=item.status;
+document.getElementById("tip").innerText=item.tip;
 
 </script>
 
